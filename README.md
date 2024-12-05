@@ -105,12 +105,10 @@ project-root
     ├── .gitignore    
     ├── .prettierignore        
     ├── .prettierrc        
-    ├── jest.config.js     
-    ├── migrate.sh 
+    ├── jest.config.js
     ├── nodemon.json
     ├── note.js
     ├── package.json
-    ├── tsconfig.json
     ├── tsconfig.json
     ├── vite-config-admin.js
 ```
