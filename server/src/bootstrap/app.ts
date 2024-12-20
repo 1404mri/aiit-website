@@ -212,7 +212,7 @@ class FastifyApp {
         console.log('server is ready to start. \n');
 
         try {
-            await this.fastify.listen({ port });
+            await this.fastify.listen({ port, host: '0.0.0.0' });
             console.log('\x1b[32m', `\nServer is running on http://127.0.0.1:${port}`, '\x1b[37m', `\n`);
         } catch (err) {
             this.fastify.log.error(err);

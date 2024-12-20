@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: ./client
+    ports:
+      - "8005:3000"
+    volumes:
+      - ./client:/var/www
+    command: npm start
+
+  backend:
+    build:
+      context: ./server
+    ports:
+      - "8006:5003"
+    volumes:
+      - ./server:/var/www
+    command: npm run server

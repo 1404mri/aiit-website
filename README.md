@@ -162,10 +162,10 @@ project-root
    - Build and run the Docker container:
 
      ```bash
-     docker-compose up --build
+     docker-compose up --build -d
      ```
 
-   - server will be available at `http://localhost:5003` & `http://localhost:3000`.
+   - server will be available at `http://localhost:8005` & `http://localhost:8006`.
 
 6. **Build for Production**:
 
