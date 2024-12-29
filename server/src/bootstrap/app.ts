@@ -2,9 +2,10 @@ import Fastify, { FastifyInstance, FastifyRequest, FastifyReply } from 'fastify'
 import AutoLoad from '@fastify/autoload';
 import view from '@fastify/view';
 import path from 'path';
-import fsp from 'fs/promises';
 import { Sequelize } from 'sequelize';
 import { FastifyCookieOptions } from '@fastify/cookie';
+import get_recursive_route_files_by_directory from '../helpers/get_recursive_route_files_by_directory';
+import { app_config } from '../configs/app.config';
 const underPressure = require('@fastify/under-pressure');
 
 class FastifyApp {
@@ -80,41 +81,20 @@ class FastifyApp {
         });
     }
 
-    private async findAllRoutesFiles(dir: string) {
-        let results: string[] = [];
-        async function recursiveSearch(currentPath: string) {
-            let module_path = path.join(__dirname, currentPath);
-
-            const entries = await fsp.readdir(module_path, {
-                withFileTypes: true,
-            });
-
-            for (let entry of entries) {
-                const fullPath = path.join(currentPath, entry.name);
-                if (entry.isDirectory()) {
-                    await recursiveSearch(fullPath);
-                } else if (entry.name === 'routes.ts') {
-                    results.push(fullPath);
-                }
-            }
-        }
-        await recursiveSearch(dir);
-        return results;
-    }
-
     private async registerRoutes() {
-        const routesPath = '../modules';
-        const routesFiles = await this.findAllRoutesFiles(routesPath);
+        const routesPath = 'modules';
+        const routesFiles: string[] = await await get_recursive_route_files_by_directory(routesPath, 'routes.ts');
 
         console.log(`\n`);
         routesFiles.forEach((routes: string) => {
             console.log(`setting up ${routes}`);
 
-            let route_path = path.join(__dirname, routes);
+            let route_path = path.join(app_config.project_path, routes);
             this.fastify.register(require(route_path), {
                 prefix: 'api/v1',
             });
         });
+        console.log(`\n`);
     }
 
     private async registerPlugins(sequelizeInstance: Sequelize) {
@@ -182,10 +162,7 @@ class FastifyApp {
 
         this.fastify
             .setNotFoundHandler((req, res) => {
-                res.status(404).send({
-                    message: 'Not Found',
-                    status: 404,
-                });
+                return (this.fastify as any).set_log('404', {}, res, req);
             })
             .setErrorHandler(async (error, req, res) => {
                 console.error(error);
@@ -209,7 +186,7 @@ class FastifyApp {
     }
 
     async start(port: number) {
-        console.log('server is ready to start. \n');
+        console.log('\nserver is ready to start. \n');
 
         try {
             await this.fastify.listen({ port, host: '0.0.0.0' });

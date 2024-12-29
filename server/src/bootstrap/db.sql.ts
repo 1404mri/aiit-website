@@ -6,7 +6,7 @@ require("dotenv").config();
 class DB {
     private static instance: Sequelize | null = null;
 
-    private constructor() { }
+    private constructor() {}
 
     public static async connect(): Promise<Sequelize> {
         if (!DB.instance) {

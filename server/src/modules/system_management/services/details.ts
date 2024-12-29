@@ -4,7 +4,7 @@ import { responseObject } from '../../../common_types/object';
 import response from '../../../helpers/response';
 import error_trace from '../../../helpers/error_trace';
 import custom_error from '../../../helpers/custom_error';
-import { modelName } from '../models/model';
+import { modelName } from '../models/error_trace.model';
 import Models from '../../../database/models';
 // async function details(
 //     fastify_instance: FastifyInstance,

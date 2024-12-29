@@ -1,5 +1,8 @@
+import { InferCreationAttributes } from "sequelize";
+import Models from "../database/models";
+
 async function error_trace(
-    models: any,
+    model: any,
     error: any,
     url: any,
     params: any,
@@ -11,10 +14,22 @@ async function error_trace(
     }
     let uid: string = generateUID();
 
+    const models = Models.get();
+    let error_trace_model = new models["ErrorTraceModel"]();
+
+    let inputs: InferCreationAttributes<typeof error_trace_model> = {
+        title: JSON.stringify(error.message),
+        uid: uid,
+        url: url,
+        params: JSON.stringify(params),
+        details: JSON.stringify(error),
+    };
+
     try {
-        await models.sequelize.query(
-            `INSERT INTO error_traces (title, details, uid, url, params) VALUES (${JSON.stringify(error.message)}, '${JSON.stringify(error.stack)}', '${uid}', '${url}', '${JSON.stringify(params)}')`,
-        );
+        await models.ErrorTraceModel.create(inputs);
+        // await models.sequelize.query(
+        //     `INSERT INTO error_traces (title, details, uid, url, params) VALUES (${JSON.stringify(error.message)}, '${JSON.stringify(error.stack)}', '${uid}', '${url}', '${JSON.stringify(params)}')`,
+        // );
     } catch (error) {
         console.error('Error executing manual query:', error);
     }

@@ -2,6 +2,7 @@
 
 import { FastifyError, FastifyReply, FastifyRequest } from 'fastify';
 import fp from 'fastify-plugin';
+import error_trace from '../helpers/error_trace';
 
 interface anyObject {
     [key: string]: any;
@@ -96,7 +97,9 @@ export default fp(function (fastify, opts = {}, done) {
                 error_message = 'internal server error';
             }
 
-            console.log('');
+            error_trace(null, error, req.url, req.params);
+
+
             // console.log('\x1b[31m');
 
             console.log(error.message);

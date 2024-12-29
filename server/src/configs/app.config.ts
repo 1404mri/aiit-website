@@ -28,6 +28,7 @@ export const app_config = {
     port,
     server_url,
     DB_string,
+    project_path: "",
 } as anyObject;
 
 export function config(key: string) {
