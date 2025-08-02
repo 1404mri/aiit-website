@@ -18,15 +18,10 @@ function About({ }: Props) {
                                     The World’s Best Education in Our University
                                 </h2>
                                 <h4 className="text-theme-colored">
-                                    Lorem ipsum dolor sit amet soluta saepe odit error, maxime
-                                    praesentium sunt udiandae!
+                                    Testing
                                 </h4>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore
-                                    atque officiis maxime suscipit expedita obcaecati nulla in ducimus
-                                    iure quos quam recusandae dolor quas et perspiciatis voluptatum
-                                    accusantium delectus nisi reprehenderit, eveniet fuga modi pariatur,
-                                    eius vero. Ea vitae maiores.
+                                    This is for editing the website for AIIT 2025
                                 </p>
                                 <a
                                     className="btn btn-theme-colored btn-flat btn-lg mt-10 mb-sm-30"
