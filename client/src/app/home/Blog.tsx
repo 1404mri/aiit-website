@@ -5,18 +5,18 @@ type Props = {}
 
 function Blog({ }: Props) {
     return (
-        <>
-            <section id="blog" className="bg-lighter">
-                <div className="container">
+        <> 
+            <section id="blog" style={{backgroundColor: "#0F4F7D"}}>
+                <div className="container" style={{backgroundColor: "#0F4F7D"}}>
                     <div className="section-title mb-10">
-                        <div className="row">
-                            <div className="col-md-8">
-                                <h2 className="mt-0 text-uppercase font-28 line-bottom line-height-1">
-                                    Latest{" "}
-                                    <span className="text-theme-color-2 font-weight-400">News</span>
+                    
+                            <div >
+                                <h2  style={{ color: "#98b7ceff", fontFamily: "Roboto" , fontWeight: "normal", textAlign:"center"}}>
+                                    Upcoming{" "}
+                                    <span style={{ color: "#ffffffff", fontFamily: "Roboto" , fontWeight: "bold" }}>News and Announcements</span>
                                 </h2>
                             </div>
-                        </div>
+                 \
                     </div>
                     <div className="section-content">
                         <div className="row">

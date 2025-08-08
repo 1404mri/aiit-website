@@ -12,9 +12,9 @@ export default function Home() {
 
             <Courses />
 
-            <HappyStudentAtAGlance />
-
             <OurTeachers />
+            
+            <HappyStudentAtAGlance />
 
             <Gallery/>
 
