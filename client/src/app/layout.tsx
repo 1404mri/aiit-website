@@ -7,8 +7,8 @@ import Footer from "./shared/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "IREAD",
-  description: "IREAD",
+  title: "AIIT",
+  description: "AIIT",
 };
 
 export default function RootLayout({
