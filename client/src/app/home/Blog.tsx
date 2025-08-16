@@ -55,13 +55,13 @@ function Blog({ }: Props) {
                                             <div className="media-body pl-15">
                                                 <div className="event-content pull-left flip">
                                                     <h4>
-                                                            Let's Read Award Ceremony and Communitnity Dinner{" "}
+                                                            Let&apos;s Read Award Ceremony and Community Dinner{" "}
                                                     </h4>
                                                 </div>
                                             </div>
                                         </div>
                                         <p className="mt-10">
-                                           Join us for the Let's Read Award Ceremony and Community Dinner on August 16th, 2025, at the 
+                                           Join us for the Let&apos;s Read Award Ceremony and Community Dinner on August 16th, 2025, at the 
                                            Diyanet Center of America!
                                         </p>
                                         <a href="/dinner_info" className="btn-read-more">

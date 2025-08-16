@@ -33,7 +33,7 @@ function LetsRead({}: Props) {
     <>
       <div style={{backgroundColor:"#456c8c" }}>
             <h2 style={{ textAlign: "center", color: "#08283fff", fontFamily: "Roboto", fontWeight: "bold", margin: "0px" ,padding:"10px" }}>
-            Let's Read
+            Let&apos;s Read
             <span style={{ color: "white" }}> Gallery</span>
             </h2>
 

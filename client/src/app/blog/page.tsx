@@ -18,7 +18,7 @@ export default function Home() {
             </div>
             <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
                 <h2 style={{ textAlign: "center", color: "#0F4F7D", fontFamily: "Roboto", fontWeight: "bold"   , fontSize: "26px", paddingTop: "20px" }}>
-                    It's the Mindset that matters most 
+                    It&aposs the Mindset that matters most 
                 </h2>
             </div>
             <div style={{backgroundColor: "#0F4F7D", padding: "20px", marginTop: "20px"}}>
