@@ -5,16 +5,16 @@ import Link from "next/link";
 
 function Header() {
     return (
-        <header id="header" className="header" style= {{fontFamily: "Inter, Times, serif"}}>
+        <header id="header" className="header" style= {{fontFamily: "Roboto, sans-serif"}}>
             <div  className="header-middle p-0 bg-lightest xs-text-center"   style={{
                 display: "flex",
                 justifyContent: "center", // centers horizontally
                 alignItems: "flex-start", // keeps it at the top
             }}>
                 <img
-                    src="/header/AIIT_logo1.png"
+                    src="/header/AIIT_Logo.png"
                     alt="AIIT Logo"
-                    style={{ height: "150px", objectFit: "contain" }}
+                    style={{ height: "150px", width: "150px", objectFit: "contain", margin:"0px", padding: "0px"}}
                 />
             </div>
             <div className="header-nav" style={{ backgroundColor: "#0F4F7D", padding: "5px", color: "white", }}>
@@ -29,7 +29,7 @@ function Header() {
                         }}>
                         <nav style={{ backgroundColor: "#0F4F7D", color: "white" }}>
                             <ul  style={{
-                            fontFamily: "Inter, Times, serif",
+                            fontFamily: "Roboto, sans-serif",
                             display: "flex",
                             gap: "40px",
                             justifyContent: "center",
@@ -52,15 +52,15 @@ function Header() {
                                 <li>
                                     <Link href="/courses" style={{ color: "white", textDecoration: "none" }}>Courses</Link>
                                 </li>
-                                <li>
+                                {/* <li>
                                     <Link href="/blog" style={{ color: "white", textDecoration: "none" }}>Blog</Link>
                                 </li>
                                 <li>
                                     <Link href="/trainer" style={{ color: "white", textDecoration: "none" }}>Trainers</Link>
                                 </li>
                                 <li>
-                                    <Link href="/aiit_models" style={{ color: "white", textDecoration: "none" }}>AIIT Models</Link>
-                                </li>
+                                    <Link href="/aiit_models" style={{ color: "white", textDecoration: "none" }}>AIIT Models</Link >
+                                </li> */}
                                 <li>
                                     <Link href="/contact_us" style={{ color: "white", textDecoration: "none" }}>Contact Us</Link>
                                 </li>
@@ -69,7 +69,7 @@ function Header() {
                                         className="btn btn-cored btn-flat bg-theme-color-2 text-white font-14 bs-modal-ajax-load mt-0 p-25 pr-15 pl-15"
                                         data-toggle="modal"
                                         data-target="#BSParentModal"
-                                        href="#"
+                                        href="/donation_page"
                                         style={{backgroundColor: "#a2dbeaff",borderRadius: "8px",width: "100px",
                                             height: "50px",
                                             display: "flex",

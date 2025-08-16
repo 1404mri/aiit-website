@@ -3,17 +3,14 @@ import Link from "next/link";
 
 export default function GridLinksPage() {
   const pages = [
-    { name: "Integrated Education Webinar Series", path: "/" },
-    { name: "Truth Matters Webinar Series", path: "/about_us" },
-    { name: "LETS READ Competition", path: "/events" },
-    { name: "Zikr-Fikr Webinar Series", path: "/courses" },
-    { name: "MFNN Conference", path: "/blog" },
-    { name: "ICNA AI & Faith Session", path: "/trainers" },
-    { name: "ISNA AI Session", path: "/aiit_models" },
-    { name: "MUNA AI Session", path: "/contact_us" },
-    { name: "Food For Thought", path: "/contact_us" },
-    { name: "Hackathon", path: "/contact_us" },
-    { name: "MySTI", path: "/contact_us" }
+    { name: "Integrated Education Webinar Series", path: "/events/integrated_education" },
+    { name: "Truth Matters Webinar Series", path: "/events/truth_matters" },
+    { name: "LETS READ Competition", path: "/events/lets_read" },
+    { name: "MFNN Conference", path: "/events/mfnn" },
+    { name: "ICNA AI & Faith Session", path: "/events/icna" },
+    { name: "ISNA AI Session", path: "/events/isna" },
+    { name: "MUNA AI Session", path: "/events/muna" },
+    { name: "BIIT-IIIT Summer School", path: "/events/biit_iiit" }
   ];
 
   return (
@@ -33,7 +30,7 @@ export default function GridLinksPage() {
         style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))",
-          gap: "30px",
+          gap: "50px",
           width: "100%",
           maxWidth: "800px",
         }}
@@ -54,6 +51,7 @@ export default function GridLinksPage() {
               textDecoration: "none",
               textAlign: "center",
               transition: "background-color 0.2s",
+              
             }}
             onMouseEnter={(e) =>
               (e.currentTarget.style.backgroundColor = "#1366a1")

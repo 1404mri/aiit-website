@@ -10,15 +10,16 @@ export default function Home() {
         <main>
             <About />
 
+            <Blog/>
+
             <Courses />
 
             <OurTeachers />
-            
+{/*             
             <HappyStudentAtAGlance />
 
-            <Gallery/>
-
-            <Blog/>
+            <Gallery/> */}
+            
         </main>
     );
 }
