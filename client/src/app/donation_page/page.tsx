@@ -37,21 +37,25 @@ function DonationPage() {
         <div className="bg-white rounded-lg shadow-lg p-8 flex flex-col items-center">
           {selected === "paypal" ? (
             <>
-              <img
-                src={PAYPAL_QR}
-                alt="PayPal QR Code"
-                className="w-56 h-56 object-cover mb-4" 
-
-              />
-              <p className="text-lg font-medium">Scan to donate with PayPal</p>
+                <a href="https://www.paypal.com/qrcodes/managed/3259c322-16cb-4595-8c6d-2ebfd3872b71?utm_source=payandgetpaid" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={PAYPAL_QR}
+                  alt="PayPal QR Code"
+                  className="w-56 h-56 object-cover mb-4"
+                  style={{ cursor: "pointer" }}
+                />
+                </a>
+                <p className="text-lg font-medium">Scan or click to donate with PayPal</p>
             </>
           ) : (
             <>
-              <img
-                src={ZELLE_QR}
-                alt="Zelle QR Code"
-                className="w-56 h-56 object-cover mb-4" 
-              />
+            <a href="https://enroll.zellepay.com/qr-codes?data=eyJuYW1lIjoiQU1FUklDQU4gSU5TVElUVVRFIE9GIElOVEVHUkFURUQgVEhPVUdIVCIsInRva2VuIjoiYWlpdC5xdWVyeUBnbWFpbC5jb20ifQ==" target="_blank" rel="noopener noreferrer">
+                <img
+                  src={ZELLE_QR}
+                  alt="Zelle QR Code"
+                  className="w-56 h-56 object-cover mb-4" 
+                />
+            </a>
               <p className="text-lg font-medium">Scan to donate with Zelle</p>
             </>
           )}

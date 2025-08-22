@@ -52,7 +52,7 @@ function Header() {
                                 <li>
                                     <Link href="/courses" style={{ color: "white", textDecoration: "none" }}>Courses</Link>
                                 </li>
-                                {/* <li>
+                                <li>
                                     <Link href="/blog" style={{ color: "white", textDecoration: "none" }}>Blog</Link>
                                 </li>
                                 <li>
@@ -60,7 +60,7 @@ function Header() {
                                 </li>
                                 <li>
                                     <Link href="/aiit_models" style={{ color: "white", textDecoration: "none" }}>AIIT Models</Link >
-                                </li> */}
+                                </li>
                                 <li>
                                     <Link href="/contact_us" style={{ color: "white", textDecoration: "none" }}>Contact Us</Link>
                                 </li>
